@@ -9,3 +9,5 @@
 	name = ctes091x
 [core]
 	editor = vim
+[pull]
+	rebase = false
