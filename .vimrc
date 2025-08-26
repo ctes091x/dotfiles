@@ -28,7 +28,7 @@ set smartcase
 set incsearch
 set wrapscan
 set hlsearch
-set clipboard=unnamed,autoselect
+" set clipboard=unnamed,autoselect
 nmap <Esc><Esc> :nohlsearch <CR><Esc>
 
 call plug#begin()
@@ -57,6 +57,7 @@ let g:airline#extensions#hunks#non_zero_only = 1
 
 " タブラインの表示を変更する
 " let g:airline_theme = 'codedark'
+let g:airline_theme = 'simple'
 let g:airline#extensions#tabline#enabled = 1 " タブラインを表示
 let g:airline_powerline_fonts = 1            " Powerline Fontsを利用
 
