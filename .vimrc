@@ -36,8 +36,10 @@ call plug#begin()
   Plug 'lambdalisue/vim-fern'
   Plug 'lambdalisue/nerdfont.vim'
   Plug 'lambdalisue/fern-renderer-nerdfont.vim'
+  Plug 'lambdalisue/vim-fern-git-status'
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
+  Plug 'tpope/vim-fugitive'
   Plug 'tomasiser/vim-code-dark'
 call plug#end()
 
@@ -61,6 +63,13 @@ let g:airline_theme = 'simple'
 let g:airline#extensions#tabline#enabled = 1 " タブラインを表示
 let g:airline_powerline_fonts = 1            " Powerline Fontsを利用
 
+if !exists('g:airline_symbols')
+	let g:airline_symbols = {}
+endif
+
+let g:airline_symbols.crypt = '🔒'		"暗号化されたファイル
+let g:airline_symbols.branch = ''		"gitブランチ
+
 " let g:airline#extensions#tabline#fnamemod = ':t'
 " let g:airline#extensions#tabline#show_buffers = 1
 " let g:airline#extensions#tabline#show_splits = 0
@@ -68,11 +77,15 @@ let g:airline_powerline_fonts = 1            " Powerline Fontsを利用
 " let g:airline#extensions#tabline#show_tab_nr = 0
 " let g:airline#extensions#tabline#show_tab_type = 1
 " let g:airline#extensions#tabline#show_close_button = 0
+
+" let g:airline#extensions#branch#enabled = 0
+" let g:airline#extensions#readonly#enabled = 0
+
 set ttimeoutlen=50
 
 " set termguicolors
 colorscheme codedark
 " colorscheme daybreak
-nnoremap <C-n> :Fern . -reveal=% -drawer -toggle -width=40<CR>
+nnoremap <C-n> :Fern . -reveal=% -drawer -toggle -width=30<CR>
 let g:fern#renderer = 'nerdfont'
 let g:fern#default_hidden=1
