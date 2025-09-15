@@ -40,7 +40,10 @@ call plug#begin()
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
   Plug 'tpope/vim-fugitive'
+" Plug 'vim-denops/denops.vim'
+" Plug 'vim-skk/skkeleton'
   Plug 'tomasiser/vim-code-dark'
+" Plug 'vim-denops/denops-helloworld.vim'
 call plug#end()
 
 "https://qiita.com/youichiro/items/b4748b3e96106d25c5bc
@@ -58,8 +61,8 @@ let g:airline_section_z = get(g:, 'airline_linecolumn_prefix', '').'%3l:%-2v'
 let g:airline#extensions#hunks#non_zero_only = 1
 
 " タブラインの表示を変更する
-" let g:airline_theme = 'codedark'
-let g:airline_theme = 'simple'
+" let g:airline_theme = 'codark'
+" let g:airline_theme = 'simple'
 let g:airline#extensions#tabline#enabled = 1 " タブラインを表示
 let g:airline_powerline_fonts = 1            " Powerline Fontsを利用
 
@@ -84,8 +87,15 @@ let g:airline_symbols.branch = ''		"gitブランチ
 set ttimeoutlen=50
 
 " set termguicolors
-colorscheme codedark
+" colorscheme codedark
+colorscheme habamax
 " colorscheme daybreak
 nnoremap <C-n> :Fern . -reveal=% -drawer -toggle -width=30<CR>
 let g:fern#renderer = 'nerdfont'
 let g:fern#default_hidden=1
+
+
+"let g:denops#deno='/home/ctes091x/.deno/bin/deno'
+"call skkeleton#config({ 'globalDictionaries': [['~/.skk/SKK-JISYO.L', 'euc-jp']] })
+"imap <C-j> <Plug>(skkeleton-enable)
+"cmap <C-j> <Plug>(skkeleton-enable)
