@@ -31,6 +31,9 @@ set hlsearch
 " set clipboard=unnamed,autoselect
 nmap <Esc><Esc> :nohlsearch <CR><Esc>
 
+set mouse=a
+set ttymouse=sgr
+
 call plug#begin()
 " Plug 'preservim/nerdtree'
   Plug 'lambdalisue/vim-fern'
@@ -44,6 +47,7 @@ call plug#begin()
 " Plug 'vim-skk/skkeleton'
   Plug 'tomasiser/vim-code-dark'
 " Plug 'vim-denops/denops-helloworld.vim'
+  Plug 'tyru/skk.vim'
 call plug#end()
 
 "https://qiita.com/youichiro/items/b4748b3e96106d25c5bc
@@ -94,8 +98,10 @@ nnoremap <C-n> :Fern . -reveal=% -drawer -toggle -width=30<CR>
 let g:fern#renderer = 'nerdfont'
 let g:fern#default_hidden=1
 
-
 "let g:denops#deno='/home/ctes091x/.deno/bin/deno'
 "call skkeleton#config({ 'globalDictionaries': [['~/.skk/SKK-JISYO.L', 'euc-jp']] })
 "imap <C-j> <Plug>(skkeleton-enable)
 "cmap <C-j> <Plug>(skkeleton-enable)
+
+let skk_large_jisyo = '~/.skk/SKK-JISYO.L'
+let skk_auto_save_jisyo = 1
