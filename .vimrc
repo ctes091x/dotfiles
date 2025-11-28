@@ -48,6 +48,7 @@ call plug#begin()
   Plug 'tomasiser/vim-code-dark'
 " Plug 'vim-denops/denops-helloworld.vim'
   Plug 'tyru/skk.vim'
+  Plug 'obcat/vim-hitspop'
 call plug#end()
 
 "https://qiita.com/youichiro/items/b4748b3e96106d25c5bc
