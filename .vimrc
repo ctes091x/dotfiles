@@ -49,6 +49,8 @@ call plug#begin()
 " Plug 'vim-denops/denops-helloworld.vim'
   Plug 'tyru/skk.vim'
   Plug 'obcat/vim-hitspop'
+" Plug 'lilydjwg/fcitx.vim'
+  Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 call plug#end()
 
 "https://qiita.com/youichiro/items/b4748b3e96106d25c5bc
@@ -68,6 +70,7 @@ let g:airline#extensions#hunks#non_zero_only = 1
 " タブラインの表示を変更する
 " let g:airline_theme = 'codark'
 " let g:airline_theme = 'simple'
+let g:airline_theme = 'catppuccin_mocha'
 let g:airline#extensions#tabline#enabled = 1 " タブラインを表示
 let g:airline_powerline_fonts = 1            " Powerline Fontsを利用
 
@@ -91,10 +94,11 @@ let g:airline_symbols.branch = ''		"gitブランチ
 
 set ttimeoutlen=50
 
-" set termguicolors
+set termguicolors
 " colorscheme codedark
-colorscheme habamax
+" colorscheme habamax
 " colorscheme daybreak
+colorscheme catppuccin_mocha
 nnoremap <C-n> :Fern . -reveal=% -drawer -toggle -width=30<CR>
 let g:fern#renderer = 'nerdfont'
 let g:fern#default_hidden=1
@@ -106,3 +110,8 @@ let g:fern#default_hidden=1
 
 let skk_large_jisyo = '~/.skk/SKK-JISYO.L'
 let skk_auto_save_jisyo = 1
+
+"let fcitx5state=system("fcitx5-remote")
+"autocmd InsertLeave * :silent let fcitx5state=system("fcitx5-remote")[0] | silent !fcitx5-remote -c " Disable the input method when exiting insert mode and save the state
+"autocmd InsertEnter * :silent if fcitx5state == 2 | call system("fcitx5-remote -o") | endif " 2 means that the input method was opened in the previous state, and the input method is started when entering the insert mode
+
