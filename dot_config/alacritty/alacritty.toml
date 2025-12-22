@@ -1,0 +1,23 @@
+[keyboard]
+bindings = [
+  { key = "=", mods = "Control|Shift", action = "IncreaseFontSize" },
+  { key = "F11", action = "ToggleFullscreen"}
+]
+
+[general]
+import = [
+  "~/.config/alacritty/catppuccin-mocha.toml"
+]
+
+[font.normal]
+family = "Source Code Pro Nerd Font"
+style = "Regular"
+
+[font.bold]
+family = "Source Code Pro Nerd Font"
+style = "Bold"
+
+[font.italic]
+family = "Source Code Pro Nerd Font"
+style = "Italic"
+
