@@ -104,3 +104,4 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias :q=exit
+export PATH="$HOME/.local/bin:$HOME/local/bin:$PATH"
