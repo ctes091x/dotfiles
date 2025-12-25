@@ -12,6 +12,9 @@ import = [
 [window]
 decorations = "None"
 
+[mouse]
+hide_when_typing = true
+
 [font.normal]
 family = "Source Code Pro Nerd Font"
 style = "Regular"
