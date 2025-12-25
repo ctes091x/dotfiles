@@ -1,10 +1,3 @@
-[".oh-my-zsh"]
-  type = "archive"
-  url = "https://github.com/ohmyzsh/ohmyzsh/archive/master.tar.gz"
-  exact = true
-  stripComponents = 1
-  refreshPeriod = "168h"
-
 [".oh-my-zsh/custom/plugins/zsh-autosuggestions"]
   type = "git-repo"
   url = "https://github.com/zsh-users/zsh-autosuggestions"
@@ -13,4 +6,9 @@
 [".vim/autoload/plug.vim"]
   type = "file"
   url = "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
+  refreshPeriod = "168h"
+
+[".config/foot/catppuccin-mocha.ini"]
+  type = "file"
+  url = "https://raw.githubusercontent.com/catppuccin/foot/refs/heads/main/themes/catppuccin-mocha.ini"
   refreshPeriod = "168h"
