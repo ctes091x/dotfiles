@@ -47,6 +47,7 @@ call plug#begin()
   Plug 'tyru/skk.vim'
   Plug 'obcat/vim-hitspop'
   Plug 'catppuccin/vim', { 'as': 'catppuccin' }
+  Plug 'chrisbra/Colorizer'
 call plug#end()
 
 "https://qiita.com/youichiro/items/b4748b3e96106d25c5bc
