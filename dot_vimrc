@@ -18,6 +18,7 @@ set wildmode=list:longest
 nnoremap j gj
 nnoremap k gk
 syntax enable
+set autochdir
 
 set list listchars=tab:\▸\-
 set expandtab
