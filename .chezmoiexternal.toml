@@ -17,3 +17,8 @@
   type = "file"
   url = "https://raw.githubusercontent.com/catppuccin/btop/refs/heads/main/themes/catppuccin_mocha.theme"
   refreshPeriod = "168h"
+
+[".config/fuzzel/catppuccin-mocha-peach.ini"]
+  type = "file"
+  url = "https://raw.githubusercontent.com/catppuccin/fuzzel/refs/heads/main/themes/catppuccin-mocha/peach.ini"
+  refreshPeriod = "168h"
