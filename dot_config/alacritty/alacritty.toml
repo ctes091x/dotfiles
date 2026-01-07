@@ -16,14 +16,14 @@ decorations = "None"
 hide_when_typing = true
 
 [font.normal]
-family = "Source Code Pro Nerd Font"
+family = "SauceCodePro Nerd Font"
 style = "Regular"
 
 [font.bold]
-family = "Source Code Pro Nerd Font"
+family = "SauceCodePro Nerd Font"
 style = "Bold"
 
 [font.italic]
-family = "Source Code Pro Nerd Font"
+family = "SauceCodePro Nerd Font"
 style = "Italic"
 
