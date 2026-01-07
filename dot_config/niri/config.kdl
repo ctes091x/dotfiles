@@ -262,6 +262,12 @@ layout {
     }
 }
 
+cursor {
+    xcursor-theme "Bibata-Modern-Ice"
+    xcursor-size 28
+    hide-when-typing
+}
+
 // Add lines like this to spawn processes at startup.
 // Note that running niri as a session supports xdg-desktop-autostart,
 // which may be more convenient to use.
@@ -275,7 +281,7 @@ spawn-at-startup "waybar"
 
 hotkey-overlay {
     // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
-    // skip-at-startup
+    skip-at-startup
 }
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
