@@ -21,6 +21,7 @@ vim.cmd.colorscheme('catppuccin-mocha')
 vim.opt.number = true
 vim.opt.cursorline = true
 vim.opt.autochdir = true
+vim.opt.clipboard = 'unnamedplus'
 
 vim.opt.expandtab = true
 vim.opt.tabstop = 2
