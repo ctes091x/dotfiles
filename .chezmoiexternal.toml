@@ -43,3 +43,8 @@
   type = "file"
   url = "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
   refreshPeriod = "168h"
+
+[".config/zellij/themes/catppuccin.kdl"]
+  type = "file"
+  url = "https://raw.githubusercontent.com/catppuccin/zellij/refs/heads/main/catppuccin.kdl"
+  refreshPeriod = "168h"
