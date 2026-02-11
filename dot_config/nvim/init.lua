@@ -98,6 +98,8 @@ vim.api.nvim_create_autocmd("FileType", {
   pattern = "fern",
   command = "setlocal nonumber norelativenumber",
 })
+vim.g['fern#hide_cursor'] = true
+-- vim.g["fern#default_hidden"] = 1
 
 
 vim.g.mapleader = " "
