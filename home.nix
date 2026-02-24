@@ -73,41 +73,11 @@
     EDITOR = "nvim";
     TERM = "xterm-256color";
   };
-
-  programs.git = {
-    enable = true;
-    settings = {
-      user.name = "ctes091x";
-      user.email = "ctes091x@ctes091x.net";
-      pull.rebase = false;
-      init.defaultBranch = "main";
-      credential.helper = "!gh auth git-credential";
-    };
-  };
   
-  programs.zsh = {
-    enable = true;
-    oh-my-zsh = {
-      enable = true;
-      theme = "re5et";
-    };
-    plugins = [
-      {
-        name = "zsh-autosuggestions";
-        file = "share/zsh-autosuggestions/zsh-autosuggestions.zsh";
-        src = pkgs.zsh-autosuggestions;
-      }
-    ];
-    setOptions = [
-      "correct"
-    ];
-    shellAliases = {
-      ":q" = "exit";
-      ls = "ls --color=tty";
-      la = "ls -a";
-      ll = "ls -la";
-    };
-  };
+  imports = [
+    ./modules/git.nix
+    ./modules/zsh.nix
+  ];
 
   home.sessionPath = [
     "$HOME/.local/bin"
