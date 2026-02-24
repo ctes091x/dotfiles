@@ -70,7 +70,8 @@
   #  /etc/profiles/per-user/ctes091x/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    EDITOR = "nvim";
+    TERM = "xterm-256color";
   };
 
   programs.git = {
@@ -83,8 +84,35 @@
       credential.helper = "!gh auth git-credential";
     };
   };
+  
+  programs.zsh = {
+    enable = true;
+    oh-my-zsh = {
+      enable = true;
+      theme = "re5et";
+    };
+    plugins = [
+      {
+        name = "zsh-autosuggestions";
+        file = "share/zsh-autosuggestions/zsh-autosuggestions.zsh";
+        src = pkgs.zsh-autosuggestions;
+      }
+    ];
+    setOptions = [
+      "correct"
+    ];
+    shellAliases = {
+      ":q" = "exit";
+      ls = "ls --color=tty";
+      la = "ls -a";
+      ll = "ls -la";
+    };
+  };
 
-
+  home.sessionPath = [
+    "$HOME/.local/bin"
+    "$HOME/local/bin"
+  ];
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
