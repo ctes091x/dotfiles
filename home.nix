@@ -22,6 +22,7 @@
     # # "Hello, world!" when run.
     # pkgs.hello
     pkgs.lazygit
+    pkgs.gh
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -79,6 +80,7 @@
       user.email = "ctes091x@ctes091x.net";
       pull.rebase = false;
       init.defaultBranch = "main";
+      credential.helper = "!gh auth git-credential";
     };
   };
 
