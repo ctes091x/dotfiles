@@ -82,6 +82,7 @@
     ./modules/zsh.nix
     ./modules/tmux.nix
     ./modules/zellij.nix
+    ./modules/btop.nix
     ./modules/catppuccin.nix
   ];
 

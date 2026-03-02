@@ -1,17 +1,3 @@
-# [".oh-my-zsh"]
-#   type = "archive"
-#   url = "https://github.com/ohmyzsh/ohmyzsh/archive/master.tar.gz"
-#   exact = true
-#   stripComponents = 1
-#   refreshPeriod = "168h"
-# 
-# [".oh-my-zsh/custom/plugins/zsh-autosuggestions"]
-#   type = "archive"
-#   url = "https://github.com/zsh-users/zsh-autosuggestions/archive/refs/heads/master.zip"
-#   exact = true
-#   stripComponents = 1
-#   refreshPeriod = "168h"
-
 [".vim/autoload/plug.vim"]
   type = "file"
   url = "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
@@ -32,29 +18,8 @@
   url = "https://raw.githubusercontent.com/catppuccin/fuzzel/refs/heads/main/themes/catppuccin-mocha/peach.ini"
   refreshPeriod = "168h"
 
-# [".config/tmux/plugins/catppuccin/tmux"]
-#   type = "archive"
-#   url = "https://github.com/catppuccin/tmux/archive/refs/tags/v2.1.3.tar.gz"
-#   exact = true
-#   stripComponents = 1
-#   refreshPeriod = "168h"
-# 
-# [".config/tmux/plugins/tmux-plugins/tmux-cpu"]
-#   type = "git-repo"
-#   url = "https://github.com/tmux-plugins/tmux-cpu.git"
-#   refreshPeriod = "168h"
-# 
-# [".config/tmux/plugins/tmux-plugins/tmux-battery"]
-#   type = "git-repo"
-#   url = "https://github.com/tmux-plugins/tmux-battery.git"
-#   refreshPeriod = "168h"
-
 [".local/share/nvim/site/autoload/plug.vim"]
   type = "file"
   url = "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
   refreshPeriod = "168h"
 
-[".config/zellij/themes/catppuccin.kdl"]
-  type = "file"
-  url = "https://raw.githubusercontent.com/catppuccin/zellij/refs/heads/main/catppuccin.kdl"
-  refreshPeriod = "168h"
