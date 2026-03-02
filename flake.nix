@@ -12,24 +12,32 @@
   };
 
   outputs =
-    { nixpkgs, home-manager, catppuccin, ... }:
+    { nixpkgs, home-manager, catppuccin, ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
     in
     {
-      homeConfigurations."ctes091x" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
+      nixosConfigurations."hermann" = nixpkgs.lib.nixosSystem {
+        inherit system;
+        specialArgs = { inherit inputs; };
 
-        # Specify your home configuration modules here, for example,
-        # the path to your home.nix.
         modules = [
-          ./home.nix
-          catppuccin.homeModules.catppuccin
+          ./hosts/hermann/configuration.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users."ctes091x" = import ./home.nix;
+            home-manager.extraSpecialArgs = { inherit inputs; };
+            home-manager.sharedModules = [
+              catppuccin.homeModules.catppuccin
+            ];
+          }
         ];
-
-        # Optionally use extraSpecialArgs
-        # to pass through arguments to home.nix
       };
     };
 }
+
+
+
