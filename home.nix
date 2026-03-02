@@ -23,6 +23,8 @@
     # pkgs.hello
     pkgs.lazygit
     pkgs.gh
+    pkgs.fastfetch
+    pkgs.acpi
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -77,6 +79,7 @@
   imports = [
     ./modules/git.nix
     ./modules/zsh.nix
+    ./modules/tmux.nix
   ];
 
   home.sessionPath = [
