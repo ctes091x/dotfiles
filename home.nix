@@ -25,6 +25,7 @@
     pkgs.gh
     pkgs.fastfetch
     pkgs.acpi
+    pkgs.tree
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -81,6 +82,7 @@
     ./modules/zsh.nix
     ./modules/tmux.nix
     ./modules/zellij.nix
+    ./modules/catppuccin.nix
   ];
 
   home.sessionPath = [
