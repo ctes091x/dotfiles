@@ -80,6 +80,7 @@
     ./modules/git.nix
     ./modules/zsh.nix
     ./modules/tmux.nix
+    ./modules/zellij.nix
   ];
 
   home.sessionPath = [
