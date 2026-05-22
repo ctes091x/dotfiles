@@ -103,7 +103,7 @@ vim.g['fern#hide_cursor'] = true
 
 
 vim.g.mapleader = " "
-vim.cmd('nnoremap <Leader>e :Fern . -reveal=% -drawer -toggle -width=30<CR>')
+vim.cmd('nnoremap <silent> <Leader>e :Fern . -reveal=% -drawer -toggle -width=30<CR>')
 
 require('lean').setup{ mappings = true }
 
