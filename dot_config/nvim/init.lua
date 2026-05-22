@@ -16,6 +16,7 @@ vim.call('plug#begin')
   Plug('nvim-lua/plenary.nvim')
   Plug('stevearc/oil.nvim')
   Plug('Julian/lean.nvim')
+  Plug('github/copilot.vim')
 vim.call('plug#end')
 
 vim.cmd.colorscheme('catppuccin-mocha')
