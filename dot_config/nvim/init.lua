@@ -14,6 +14,7 @@ vim.call('plug#begin')
   Plug('lambdalisue/vim-fern-git-status')
   Plug('lambdalisue/glyph-palette.vim')
   Plug('nvim-lua/plenary.nvim')
+  Plug('stevearc/oil.nvim')
   Plug('Julian/lean.nvim')
 vim.call('plug#end')
 
@@ -105,6 +106,7 @@ vim.g['fern#hide_cursor'] = true
 vim.g.mapleader = " "
 vim.cmd('nnoremap <silent> <Leader>e :Fern . -reveal=% -drawer -toggle -width=30<CR>')
 
+require("oil").setup()
 require('lean').setup{ mappings = true }
 
 -- -- disable netrw at the very start of your init.lua
