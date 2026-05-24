@@ -1,3 +1,4 @@
+let mapleader = "\<Space>"
 "https://qiita.com/morikooooo/items/9fd41bcd8d1ce9170301
 set fenc=utf-8
 set nobackup
