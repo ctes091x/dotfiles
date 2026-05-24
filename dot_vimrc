@@ -30,7 +30,7 @@ set incsearch
 set wrapscan
 set hlsearch
 " set clipboard=unnamed,autoselect
-nmap <Esc><Esc> :nohlsearch <CR><Esc>
+nmap <silent> <Esc><Esc> :nohlsearch <CR><Esc>
 
 set mouse=a
 set ttymouse=sgr
@@ -79,7 +79,7 @@ set termguicolors
 " colorscheme habamax
 " colorscheme daybreak
 colorscheme catppuccin_mocha
-nnoremap <C-n> :Fern . -reveal=% -drawer -toggle -width=30<CR>
+nnoremap <silent> <Leader>e :Fern . -reveal=% -drawer -toggle -width=30<CR>
 let g:fern#renderer = 'nerdfont'
 let g:fern#default_hidden=1
 
