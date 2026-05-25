@@ -17,6 +17,8 @@ vim.call('plug#begin')
   Plug('stevearc/oil.nvim')
   Plug('Julian/lean.nvim')
   Plug('github/copilot.vim')
+  Plug ('nvim-telescope/telescope.nvim')
+  Plug ('epwalsh/obsidian.nvim')
 vim.call('plug#end')
 
 vim.cmd.colorscheme('catppuccin-mocha')
@@ -31,6 +33,10 @@ vim.opt.shiftwidth = 2
 vim.opt.softtabstop = 2
 vim.opt.autoindent = true
 vim.opt.smartindent = true
+
+vim.o.wildmode = "list:longest,full"
+
+vim.cmd('nnoremap <silent> <Esc><Esc> :nohlsearch<CR><Esc>')
 
 require('lualine').setup {
   options = {
@@ -194,3 +200,27 @@ map('n', '<Space>bw', '<Cmd>BufferOrderByWindowNumber<CR>', opts)
 -- Other:
 -- :BarbarEnable - enables barbar (enabled by default)
 -- :BarbarDisable - very bad command, should never be used
+require("obsidian").setup({
+  -- Obsidianの保管庫（Vault）へのパスを指定（複数指定も可能）
+  workspaces = {
+    {
+      name = "personal",
+      path = "~/Documents/Obsidian/Vault", -- 実際のパスに合わせて変更してください
+    },
+  },
+
+  -- 毎日のノート（Daily Notes）を使う場合の設定
+  daily_notes = {
+    folder = "diary",
+    date_format = "%Y-%m-%d",
+  },
+
+  -- 新規ノート作成時の挙動
+  completion = {
+    -- nvim_cmp = true, -- nvim-cmpを使っているならtrue
+    min_chars = 2,
+  },
+})
+
+vim.opt.conceallevel = 1
+
