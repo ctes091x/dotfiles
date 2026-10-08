@@ -204,6 +204,11 @@ require("obsidian").setup({
   -- 旧来の ObsidianXxx 形式のコマンドを無効化（`:Obsidian xxx` に統一）
   legacy_commands = false,
 
+  -- frontmatter の自動付与・自動整形を無効化
+  frontmatter = {
+    enabled = false,
+  },
+
   -- Obsidianの保管庫（Vault）へのパスを指定（複数指定も可能）
   workspaces = {
     {
