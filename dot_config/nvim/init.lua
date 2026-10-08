@@ -20,8 +20,8 @@ vim.call('plug#begin')
   Plug('lambdalisue/glyph-palette.vim')
   Plug('nvim-lua/plenary.nvim')
   Plug('stevearc/oil.nvim')
-  Plug('Julian/lean.nvim')
-  Plug('github/copilot.vim')
+--  Plug('Julian/lean.nvim')
+--  Plug('github/copilot.vim')
   Plug ('nvim-telescope/telescope.nvim')
   Plug ('obsidian-nvim/obsidian.nvim')
 vim.call('plug#end')
@@ -122,7 +122,7 @@ vim.g['fern#hide_cursor'] = true
 map('n', '<Leader>e', '<Cmd>Fern . -reveal=% -drawer -toggle -width=30<CR>', opts)
 
 require("oil").setup()
-require('lean').setup{ mappings = true }
+-- require('lean').setup{ mappings = true }
 
 -- -- disable netrw at the very start of your init.lua
 -- vim.g.loaded_netrw = 1
