@@ -1,34 +1,40 @@
 return {
   {
-    'lambdalisue/vim-fern',
-    cmd = 'Fern',
+    'nvim-neo-tree/neo-tree.nvim',
+    branch = 'v3.x',
+    -- neo-tree 自身が遅延読み込みする
+    lazy = false,
     dependencies = {
-      'lambdalisue/vim-nerdfont',
-      'lambdalisue/fern-renderer-nerdfont.vim',
-      'lambdalisue/vim-fern-git-status',
-      'lambdalisue/glyph-palette.vim',
+      'nvim-lua/plenary.nvim',
+      'MunifTanjim/nui.nvim',
+      'nvim-tree/nvim-web-devicons',
     },
     keys = {
-      { '<Leader>e', '<Cmd>Fern . -reveal=% -drawer -toggle -width=30<CR>', silent = true },
+      {
+        '<Leader>e',
+        -- fern の `Fern . -reveal=%` と同じく、開くたびに cwd を root にする
+        function()
+          require('neo-tree.command').execute({
+            toggle = true,
+            reveal = true,
+            position = 'left',
+            dir = vim.fn.getcwd(),
+          })
+        end,
+        desc = 'Neo-tree (cwd)',
+      },
     },
-    init = function()
-      -- fern の読み込み前に設定しておく
-      vim.g['fern#renderer'] = 'nerdfont'
-      vim.g['fern#hide_cursor'] = true
-      -- vim.g["fern#default_hidden"] = 1
-
-      local group = vim.api.nvim_create_augroup('my-glyph-palette', { clear = true })
-      vim.api.nvim_create_autocmd('FileType', {
-        group = group,
-        pattern = { 'fern', 'nerdtree', 'startify' },
-        callback = function() vim.fn['glyph_palette#apply']() end,
-      })
-      vim.api.nvim_create_autocmd('FileType', {
-        group = group,
-        pattern = 'fern',
-        command = 'setlocal nonumber norelativenumber',
-      })
-    end,
+    opts = {
+      window = {
+        width = 30,
+      },
+      filesystem = {
+        -- ディレクトリを開いたときは oil に任せる
+        hijack_netrw_behavior = 'disabled',
+        -- autochdir でバッファを移るたびに root が変わらないようにする
+        bind_to_cwd = false,
+      },
+    },
   },
 
   {
