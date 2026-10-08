@@ -8,8 +8,8 @@ return {
       options = {
         icons_enabled = true,
         theme = 'auto',
-        component_separators = { left = '', right = ''},
-        section_separators = { left = '', right = ''},
+        component_separators = { left = '\u{e0b1}', right = '\u{e0b3}' }, -- nerdfont:  
+        section_separators = { left = '\u{e0b0}', right = '\u{e0b2}' }, -- nerdfont:  
         disabled_filetypes = {
           statusline = {},
           winbar = {},
