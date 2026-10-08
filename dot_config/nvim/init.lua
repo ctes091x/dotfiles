@@ -1,4 +1,9 @@
 local vim = vim
+local map = vim.api.nvim_set_keymap
+local opts = { noremap = true, silent = true }
+
+vim.g.mapleader = " "
+
 local Plug = vim.fn['plug#']
 
 vim.call('plug#begin')
@@ -36,7 +41,10 @@ vim.opt.smartindent = true
 
 vim.o.wildmode = "list:longest,full"
 
-vim.cmd('nnoremap <silent> <Esc><Esc> :nohlsearch<CR><Esc>')
+-- vim.cmd('nnoremap <silent> <Esc><Esc> :nohlsearch<CR><Esc>')
+map('n', '<Esc><Esc>', '<Cmd>nohlsearch<CR><Esc>', opts)
+map('n', 'j', 'gj', opts)
+map('n', 'k', 'gk', opts)
 
 require('lualine').setup {
   options = {
@@ -110,8 +118,8 @@ vim.g['fern#hide_cursor'] = true
 -- vim.g["fern#default_hidden"] = 1
 
 
-vim.g.mapleader = " "
-vim.cmd('nnoremap <silent> <Leader>e :Fern . -reveal=% -drawer -toggle -width=30<CR>')
+-- vim.cmd('nnoremap <silent> <Leader>e :Fern . -reveal=% -drawer -toggle -width=30<CR>')
+map('n', '<Leader>e', '<Cmd>Fern . -reveal=% -drawer -toggle -width=30<CR>', opts)
 
 require("oil").setup()
 require('lean').setup{ mappings = true }
@@ -144,8 +152,6 @@ require('lean').setup{ mappings = true }
 -- 
 -- vim.cmd.nnoremap('<Leader>e :NvimTreeToggle<Enter>')
 
-local map = vim.api.nvim_set_keymap
-local opts = { noremap = true, silent = true }
 -- Move to previous/next
 map('n', '<A-,>', '<Cmd>BufferPrevious<CR>', opts)
 map('n', '<A-.>', '<Cmd>BufferNext<CR>', opts)
