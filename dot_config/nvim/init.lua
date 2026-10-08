@@ -18,7 +18,7 @@ vim.call('plug#begin')
   Plug('Julian/lean.nvim')
   Plug('github/copilot.vim')
   Plug ('nvim-telescope/telescope.nvim')
-  Plug ('epwalsh/obsidian.nvim')
+  Plug ('obsidian-nvim/obsidian.nvim')
 vim.call('plug#end')
 
 vim.cmd.colorscheme('catppuccin-mocha')
@@ -201,6 +201,9 @@ map('n', '<Space>bw', '<Cmd>BufferOrderByWindowNumber<CR>', opts)
 -- :BarbarEnable - enables barbar (enabled by default)
 -- :BarbarDisable - very bad command, should never be used
 require("obsidian").setup({
+  -- 旧来の ObsidianXxx 形式のコマンドを無効化（`:Obsidian xxx` に統一）
+  legacy_commands = false,
+
   -- Obsidianの保管庫（Vault）へのパスを指定（複数指定も可能）
   workspaces = {
     {
@@ -221,6 +224,9 @@ require("obsidian").setup({
     min_chars = 2,
   },
 })
+
+map('n', '<Leader>od', '<Cmd>Obsidian dailies<CR>', opts)
+map('n', '<Leader>oq', '<Cmd>Obsidian quick_switch<CR>', opts)
 
 vim.opt.conceallevel = 1
 
