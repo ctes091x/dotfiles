@@ -66,6 +66,28 @@ return {
           },
         },
       })
+      -- pnpm のリポジトリでは、eslint-plugin-astro が eslint-plugin-jsx-a11y を見つけられず
+      -- `Key "jsx-a11y": Expected an object` で落ちる。直接依存していないパッケージは
+      -- node_modules/.pnpm/node_modules にしか置かれず、CLI では .bin/eslint のシムが NODE_PATH で補っているため、
+      -- 言語サーバーにも同じ NODE_PATH を渡す(それ以外は nvim-lspconfig の lsp/eslint.lua の cmd と同じ)
+      vim.lsp.config('eslint', {
+        cmd = function(dispatchers, config)
+          local cmd = 'vscode-eslint-language-server'
+          local env
+          if (config or {}).root_dir then
+            local local_cmd = vim.fs.joinpath(config.root_dir, 'node_modules/.bin', cmd)
+            if vim.fn.executable(local_cmd) == 1 then
+              cmd = local_cmd
+            end
+            local hoisted = vim.fs.joinpath(config.root_dir, 'node_modules/.pnpm/node_modules')
+            if vim.fn.isdirectory(hoisted) == 1 then
+              local node_path = vim.env.NODE_PATH
+              env = { NODE_PATH = (node_path and node_path ~= '') and (hoisted .. ':' .. node_path) or hoisted }
+            end
+          end
+          return vim.lsp.rpc.start({ cmd, '--stdio' }, dispatchers, { env = env })
+        end,
+      })
       -- Tailwind v4 の @theme / @apply / @custom-variant などを未知の at-rule として警告しない
       vim.lsp.config('cssls', {
         settings = {
