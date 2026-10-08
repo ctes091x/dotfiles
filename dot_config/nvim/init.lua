@@ -219,14 +219,14 @@ require("obsidian").setup({
   workspaces = {
     {
       name = "personal",
-      path = "~/Documents/Obsidian/Vault", -- 実際のパスに合わせて変更してください
+      path = "~/Documents/Obsidian", -- 実際のパスに合わせて変更してください
     },
   },
 
   -- 毎日のノート（Daily Notes）を使う場合の設定
   daily_notes = {
     folder = "diary",
-    date_format = "%Y-%m-%d",
+    date_format = "%Y/%m/%Y-%m-%d",
   },
 
   -- 新規ノート作成時の挙動
