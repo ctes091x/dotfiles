@@ -230,7 +230,7 @@ bindsym $mod+r mode "resize"
 # }
 
 default_border pixel 1
-default_floating_border pixel 1
+default_floating_border pixel 0
 # client.unfocused        #222222 #222222 #888888 #444444 #222222
 # client.focused          #fab387 #fab387 #ffffff #fab387 #fab387
 # client.focused_inactive #333333 #333333 #cccccc #333333 #333333
