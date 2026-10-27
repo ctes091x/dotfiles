@@ -1,0 +1,9 @@
+#!/bin/sh
+# DMSのsession.jsonには天気の座標やランチャー履歴も入るので、ファイルごとは管理しない。
+# chezmoiが今の内容を標準入力に渡すので、壁紙のキーだけを書き換えて返す。
+current=$(cat)
+[ -n "$current" ] || current='{}'
+printf '%s' "$current" | jq --arg home "$HOME" '
+  .wallpaperPath = $home + "/Pictures/Wallpapers/adachi_plaster_cut_2x.png"
+  | .perMonitorWallpaper = false
+  | del(.monitorWallpapers)'
