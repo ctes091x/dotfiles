@@ -104,6 +104,15 @@ output "eDP-1" {
     // If the position is unset or results in an overlap, the output is instead placed
     // automatically.
     position x=1280 y=0
+
+    // パネルが割れていて左490px・下330pxが見えないので、ウィンドウをその外に置く。
+    // 外部モニタに影響しないよう、全体のlayoutではなくこの出力だけに設定する。
+    layout {
+        struts {
+            left 490
+            bottom 330
+        }
+    }
 }
 
 // Settings that influence how windows are positioned and sized.
@@ -562,6 +571,8 @@ binds {
     Mod+Ctrl+R { reset-window-height; }
     Mod+F { maximize-column; }
     Mod+Shift+F { fullscreen-window; }
+    // 内蔵パネルの割れた領域にはみ出さない「フルスクリーンのふり」
+    Mod+Ctrl+Shift+F { toggle-windowed-fullscreen; }
 
     // Expand the focused column to space not taken up by other fully visible columns.
     // Makes the column "fill the rest of the space".
