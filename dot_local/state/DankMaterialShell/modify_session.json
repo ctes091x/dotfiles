@@ -5,5 +5,5 @@ current=$(cat)
 [ -n "$current" ] || current='{}'
 printf '%s' "$current" | jq --arg home "$HOME" '
   .wallpaperPath = $home + "/Pictures/Wallpapers/adachi_plaster_cut_2x.png"
-  | .perMonitorWallpaper = false
-  | del(.monitorWallpapers)'
+  | .perMonitorWallpaper = true
+  | .monitorWallpapers = {"eDP-1": ($home + "/Pictures/Wallpapers/adachi_plaster_cut_eDP.png")}'
